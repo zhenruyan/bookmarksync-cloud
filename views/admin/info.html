@@ -1,0 +1,35 @@
+<% include ../head.html %>
+
+<div>
+    <style>
+        .titles{
+            text-align: center;
+        }
+        .infoview{
+
+        }
+    </style>
+    <h1 class="titles">系统信息</h1>
+    <table class="table table-border  table-bordered">
+        <tbody class="infoview">
+        <tr ><th>corecms</th><td><a href="https://freeidea.win">zhenruyan</a></td></tr>
+        <tr ><th>version</th><td>0.1</td></tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+
+<% include ../footer.html %>
+<script>
+    var infodata=<%-sysinfo%>;
+    var b=eval(infodata);
+
+    for(var i in b) {
+
+        $('.infoview').append('  <tr ><th>'+i+'</th><td>'+b[i]+'</td></tr>');
+
+    }
+</script>

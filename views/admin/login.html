@@ -1,0 +1,55 @@
+<% include ../head.html %>
+<style>
+    .zw{
+        height: 30ch;
+    }
+    .app{
+        text-align: center;
+        display: block;
+        width: 300px;
+        margin: 0 auto;
+        font-size: 22px;
+    }
+    .content{
+        width: 200px;
+        margin: 0 auto;
+    }
+    .bd input{
+        display: block;
+        margin: 3px auto;
+    }
+</style>
+
+<div class="zw"></div>
+<div class="app Huialert Huialert-info">
+    {{ message }}
+</div>
+<div class="content">
+
+    <div class="bd">
+        <form class="bd-d" action="/admin/login" method="post">
+            <input class="input-text radius" type="text" name="user">
+            <input class="input-text radius" type="password" name="password">
+            <input class='btn btn-primary size-L radius' type="submit">
+
+        </form>
+
+    </div>
+</div>
+
+
+
+<% include ../footer.html %>
+
+
+<script>
+    var msg=<%- msg%>;
+    msg=eval(msg);
+    var app = new Vue({
+        el: '.app',
+        data: {
+            message: msg.text
+        }
+
+    })
+</script>
